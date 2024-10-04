@@ -49,7 +49,7 @@ export class LoginComponent implements OnInit {
       this.authService.login(this.loginForm.value.email, this.loginForm.value.password).subscribe({
         next: (response) => {
           localStorage.setItem('token', response.token);
-          this.router.navigate(['/pqr']);
+          this.router.navigate(['/pqrs']);
         },
         error: (error) => {
           console.error('Error de inicio de sesión', error);
