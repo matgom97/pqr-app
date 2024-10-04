@@ -1,57 +1,85 @@
 /* src/app/auth/login/login.component.css */
 .login-container {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ocupar toda la pantalla */
+    background-color: #f8f9fa; /* Fondo claro */
 }
 
 h2 {
-    text-align: center;
     margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+    color: #343a40; /* Texto oscuro */
 }
 
-form div {
+form {
+    background-color: #fff; /* Fondo blanco */
+    padding: 20px;
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    width: 300px; /* Ancho del formulario */
+}
+
+.form-group {
     margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
 }
 
 label {
-    display: block;
-    margin-bottom: 5px;
+    font-size: 14px;
+    color: #495057; /* Color de etiqueta */
 }
 
-input[type="text"],
-input[type="password"],
-input[type="email"] {
-    width: 100%;
+input {
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
+    border: 1px solid #ced4da; /* Borde gris */
+    border-radius: 4px; /* Bordes redondeados */
+    font-size: 16px;
+    margin-top: 5px;
 }
 
-small {
-    color: red;
-    font-size: 12px;
+input:focus {
+    outline: none;
+    border-color: #007bff; /* Borde azul al enfocar */
 }
 
 button {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
+    background-color: #007bff; /* Fondo azul */
     color: white;
+    padding: 10px;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px; /* Bordes redondeados */
+    width: 100%;
     cursor: pointer;
     font-size: 16px;
 }
 
 button:disabled {
-    background-color: #ccc;
+    background-color: #6c757d; /* Fondo gris para botones deshabilitados */
 }
 
-p {
+button:hover {
+    background-color: #0056b3; /* Azul más oscuro al pasar el ratón */
+}
+
+small {
+    color: #dc3545; /* Color rojo para los mensajes de error */
+    font-size: 12px;
+}
+
+.register-link {
+    margin-top: 15px;
     text-align: center;
+}
+
+.register-link a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
 }

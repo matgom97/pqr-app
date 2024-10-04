@@ -1,0 +1,91 @@
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ocupar toda la pantalla */
+    background-color: #f8f9fa; /* Fondo claro */
+}
+
+.register-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centrar verticalmente */
+    align-items: center; /* Centrar horizontalmente */
+    height: 100vh; /* Ocupar toda la altura de la ventana */
+    background-color: #f8f9fa; /* Fondo claro */
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+    color: #343a40; /* Texto oscuro */
+}
+
+form {
+    background-color: #fff; /* Fondo blanco */
+    padding: 20px;
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    width: 300px; /* Ancho del formulario */
+    max-width: 90%; /* Para que el formulario no sea más ancho que la ventana */
+}
+
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 14px;
+    color: #495057; /* Color de etiqueta */
+}
+
+input, select {
+    padding: 10px;
+    border: 1px solid #ced4da; /* Borde gris */
+    border-radius: 4px; /* Bordes redondeados */
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #007bff; /* Borde azul al enfocar */
+}
+
+button {
+    background-color: #007bff; /* Fondo azul */
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px; /* Bordes redondeados */
+    width: 100%; /* Ancho completo del botón */
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0056b3; /* Azul más oscuro al pasar el ratón */
+}
+
+small {
+    color: #dc3545; /* Color rojo para los mensajes de error */
+    font-size: 12px;
+}
+
+.register-link {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.register-link a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}

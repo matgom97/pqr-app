@@ -4,7 +4,9 @@ nav {
     padding: 10px 20px; /* Espaciado */
     display: flex; /* Usar flexbox para alineación */
     justify-content: flex-end; /* Alinear elementos a la derecha */
+    align-items: center; /* Centrar verticalmente los elementos */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra suave */
+    height: 60px; /* Altura fija para garantizar alineación */
 }
 
 ul {
@@ -12,10 +14,13 @@ ul {
     margin: 0; /* Sin márgenes */
     padding: 0; /* Sin padding */
     display: flex; /* Usar flexbox */
+    align-items: center; /* Centrar verticalmente los elementos dentro del ul */
 }
 
 li {
     margin-left: 20px; /* Espaciado entre elementos */
+    display: flex; /* Usar flexbox */
+    align-items: center; /* Centrar verticalmente dentro del li */
 }
 
 a {
@@ -24,6 +29,8 @@ a {
     padding: 10px 15px; /* Espaciado interno */
     border-radius: 5px; /* Bordes redondeados */
     transition: background-color 0.3s; /* Transición suave */
+    display: flex; /* Usar flexbox */
+    align-items: center; /* Centrar verticalmente el texto dentro del a */
 }
 
 a:hover {
@@ -38,6 +45,8 @@ button {
     border-radius: 5px; /* Bordes redondeados */
     cursor: pointer; /* Cursor tipo mano */
     transition: background-color 0.3s; /* Transición suave */
+    display: flex; /* Usar flexbox */
+    align-items: center; /* Centrar verticalmente el texto dentro del button */
 }
 
 button:hover {

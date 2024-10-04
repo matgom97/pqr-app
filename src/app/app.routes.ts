@@ -5,6 +5,7 @@ import { RegisterComponent } from './auth/register/register.component';
 import { PqrListComponent } from './pqr-list/pqr-list.component';
 import { EditPqrComponent } from './edit-pqr/edit-pqr.component';
 import { UserManagementComponent } from './user-management/user-management.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
 
 
 
@@ -15,6 +16,7 @@ export const routes: Routes = [
     { path: 'pqrs', component: PqrListComponent },
     { path: 'edit-pqr/:id', component: EditPqrComponent },
     { path: '', redirectTo: '/pqrs', pathMatch: 'full' },
+    { path: 'change-password', component: ChangePasswordComponent },
     {
         path: 'user-management',
         component: UserManagementComponent,
