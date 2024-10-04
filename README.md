@@ -1,5 +1,7 @@
 # PqrApp
 
+# Usa npx compodoc -p tsconfig.json -s para ver la documentación del codigo 
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.2.
 
 ## Development server
