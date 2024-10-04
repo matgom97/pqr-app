@@ -1,0 +1,45 @@
+/* src/app/nav-bar/nav-bar.component.css */
+nav {
+    background-color: #000; /* Fondo negro */
+    padding: 10px 20px; /* Espaciado */
+    display: flex; /* Usar flexbox para alineación */
+    justify-content: flex-end; /* Alinear elementos a la derecha */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Sombra suave */
+}
+
+ul {
+    list-style-type: none; /* Sin viñetas */
+    margin: 0; /* Sin márgenes */
+    padding: 0; /* Sin padding */
+    display: flex; /* Usar flexbox */
+}
+
+li {
+    margin-left: 20px; /* Espaciado entre elementos */
+}
+
+a {
+    color: white; /* Texto blanco */
+    text-decoration: none; /* Sin subrayado */
+    padding: 10px 15px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Fondo blanco transparente al pasar el mouse */
+}
+
+button {
+    padding: 10px 15px; /* Espaciado interno */
+    background-color: #dc3545; /* Botón rojo */
+    color: white; /* Texto blanco */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor tipo mano */
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+button:hover {
+    background-color: #c82333; /* Fondo más oscuro al pasar el mouse */
+}

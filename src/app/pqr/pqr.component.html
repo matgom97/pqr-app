@@ -1,0 +1,39 @@
+<!-- src/app/pqr/pqr.component.html -->
+<form [formGroup]="pqrForm" (ngSubmit)="onSubmit()">
+    <label for="fecha_incidencia">Fecha de Incidencia:</label>
+    <input type="date" formControlName="fecha_incidencia" required />
+  
+    <label for="identificacion">Identificación:</label>
+    <input type="text" formControlName="identificacion" required />
+  
+    <label for="primer_nombre">Primer Nombre:</label>
+    <input type="text" formControlName="primer_nombre" required />
+  
+    <label for="primer_apellido">Primer Apellido:</label>
+    <input type="text" formControlName="primer_apellido" required />
+  
+    <label for="correo">Correo:</label>
+    <input type="email" formControlName="correo" required />
+  
+    <label for="medio_notificacion">Medio de Notificación:</label>
+    <input type="text" formControlName="medio_notificacion" />
+  
+    <label for="tipo">Tipo:</label>
+    <select formControlName="tipo" required>
+      <option value="" disabled selected>Seleccionar tipo</option>
+      <option value="Petición">Petición</option>
+      <option value="Queja">Queja</option>
+      <option value="Reclamo">Reclamo</option>
+    </select>
+  
+    <label for="causas">Causas:</label>
+    <textarea formControlName="causas"></textarea>
+  
+    <label for="observacion">Observación:</label>
+    <textarea formControlName="observacion" required></textarea>
+  
+    <label for="evidencias">Evidencias:</label>
+    <textarea formControlName="evidencias"></textarea>
+  
+    <button type="submit">Crear PQR</button>
+  </form>

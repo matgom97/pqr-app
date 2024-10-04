@@ -1,0 +1,30 @@
+<div *ngIf="loading">Cargando...</div>
+<div *ngIf="!loading">
+  <form [formGroup]="pqrForm" (ngSubmit)="onSubmit()">
+    <label for="identificacion">Identificación:</label>
+    <input id="identificacion" formControlName="identificacion">
+
+    <label for="primer_nombre">Primer Nombre:</label>
+    <input id="primer_nombre" formControlName="primer_nombre">
+
+    <label for="primer_apellido">Primer Apellido:</label>
+    <input id="primer_apellido" formControlName="primer_apellido">
+
+    <label for="correo">Correo:</label>
+    <input id="correo" formControlName="correo">
+
+    <label for="medio_notificacion">Medio de Notificación:</label>
+    <input id="medio_notificacion" formControlName="medio_notificacion">
+
+    <label for="tipo">Tipo:</label>
+    <input id="tipo" formControlName="tipo">
+
+    <label for="causas">Causas:</label>
+    <input id="causas" formControlName="causas">
+
+    <label for="observacion">Observación:</label>
+    <textarea id="observacion" formControlName="observacion"></textarea>
+
+    <button type="submit">Actualizar PQR</button>
+  </form>
+</div>

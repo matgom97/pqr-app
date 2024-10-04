@@ -1,0 +1,12 @@
+<!-- src/app/nav-bar/nav-bar.component.html -->
+
+<nav>
+    <ul>
+      <li><a routerLink="/">Inicio</a></li>
+      <li><a [routerLink]="['/pqr']">agregar pqr</a></li>
+      <li *ngIf="isAdmin">
+        <a [routerLink]="['/user-management']">Gestión de Usuarios</a>
+      </li>
+      <li><button (click)="logout()">Logout</button></li>
+    </ul>
+  </nav>

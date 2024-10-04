@@ -1,0 +1,51 @@
+<!-- src/app/pqr-list/pqr-list.component.html -->
+<div>
+    <h2>Listado de PQRs</h2>
+  
+    <!-- Campos de filtrado -->
+    <div>
+      <label for="filterDate">Filtrar por Fecha de Incidencia:</label>
+      <input type="date" id="filterDate" [(ngModel)]="filterDate" (ngModelChange)="applyFilter()" />
+      
+      <label for="filterType">Filtrar por Tipo:</label>
+      <select id="filterType" [(ngModel)]="filterType" (ngModelChange)="applyFilter()">
+        <option value="">Todos</option>
+        <option value="Petición">Petición</option>
+        <option value="Queja">Queja</option>
+        <option value="Reclamo">Reclamo</option>
+      </select>
+    </div>
+  
+    <div *ngIf="loading">Cargando...</div>
+    <div *ngIf="!loading && filteredPqrs.length === 0">No hay PQR disponibles.</div>
+  
+    <table *ngIf="!loading && filteredPqrs.length > 0">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Tipo</th>
+          <th>Observaciones</th>
+          <th>Fecha de Incidencia</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let pqr of filteredPqrs">
+          <td>{{ pqr.id }}</td>
+          <td>{{ pqr.tipo }}</td>
+          <td>{{ pqr.observacion }}</td>
+          <td>{{ pqr.fecha_incidencia }}</td>
+          <td>
+            <button (click)="editPqr(pqr.id)">Editar</button>
+            <button (click)="deletePqr(pqr.id)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <div>
+      <button (click)="changePage(currentPage - 1)" [disabled]="currentPage === 1">Anterior</button>
+      <span>Página {{ currentPage }}</span>
+      <button (click)="changePage(currentPage + 1)">Siguiente</button>
+    </div>
+  </div>
