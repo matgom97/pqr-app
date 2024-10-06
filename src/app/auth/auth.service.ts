@@ -44,6 +44,19 @@ export class AuthService {
     }
   }
 
+  changePassword(currentPassword: string, newPassword: string): Observable<any> {
+  const token = localStorage.getItem('token'); // Obtén el token de localStorage
+  const headers = {
+    'Authorization': `Bearer ${token}`, // Incluye el token en los encabezados
+    'Content-Type': 'application/json'
+  };
+
+  return this.http.post(`${this.apiUrl}/change-password`, 
+    { current_password: currentPassword, new_password: newPassword },
+    { headers }
+  );
+}
+
   isAdmin(): boolean {
     if (isPlatformBrowser(this.platformId)) {
       const user = localStorage.getItem('user');
@@ -54,5 +67,12 @@ export class AuthService {
       }
     }
     return false; // Retorna false si no hay usuario o no tiene rol admin
+  }
+
+  isLoggedIn(): boolean {
+    if (isPlatformBrowser(this.platformId)) {
+      return !!localStorage.getItem('token'); // Retorna true si hay un token en el localStorage
+    }
+    return false;
   }
 }
