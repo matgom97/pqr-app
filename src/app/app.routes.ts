@@ -15,7 +15,7 @@ export const routes: Routes = [
     { path: 'register', component: RegisterComponent },
     { path: 'pqrs', component: PqrListComponent },
     { path: 'edit-pqr/:id', component: EditPqrComponent },
-    { path: '', redirectTo: '/pqrs', pathMatch: 'full' },
+    { path: '', redirectTo: '/login', pathMatch: 'full' },
     { path: 'change-password', component: ChangePasswordComponent },
     {
         path: 'user-management',

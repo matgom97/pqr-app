@@ -1,25 +1,24 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, catchError, throwError } from 'rxjs';
-import { PqrResponse } from '../models/pqr-response.model'; // Asegúrate de que la ruta sea correcta
+import { PqrResponse } from '../models/pqr-response.model'; 
 
 @Injectable({
   providedIn: 'root'
 })
 export class PqrService {
-  private baseUrl = 'http://localhost:8000/api'; // Cambia esto por tu URL de API
+  private baseUrl = 'http://localhost:8000/api'; 
 
   constructor(private http: HttpClient) { }
 
   // Método para obtener los encabezados de autorización
   private getAuthHeaders() {
-    const token = localStorage.getItem('token'); // O sessionStorage, según cómo lo hayas almacenado
-
-    console.log("Token:", token); // Verifica el valor del token
+    const token = localStorage.getItem('token'); 
+    console.log("Token:", token); 
 
     // Si no hay token, retorna un objeto vacío
     if (!token) {
-      return {}; // O puedes devolver un objeto de encabezados vacío
+      return {}; 
     }
 
     return {

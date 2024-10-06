@@ -19,13 +19,12 @@ export class LoginComponent implements OnInit {
     private fb: FormBuilder,
     private router: Router,
     private authService: AuthService,
-    @Inject(PLATFORM_ID) private platformId: Object // Inyección de plataforma
+    @Inject(PLATFORM_ID) private platformId: Object 
   ) {}
 
   ngOnInit(): void {
     console.log("LoginComponent initialized");
-  
-    // Inicializa el formulario
+
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(8)]],
@@ -35,9 +34,9 @@ export class LoginComponent implements OnInit {
 
     if (isPlatformBrowser(this.platformId)) {
       const token = localStorage.getItem('token');
-      console.log("Token en localStorage:", token); // Para depuración
+      console.log("Token en localStorage:", token);
       if (token) {
-        this.router.navigate(['/pqrs']); // Redirige si el token existe
+        this.router.navigate(['/pqrs']); 
       }
     } else {
       console.log("no pasa nada");

@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { PqrService } from '../services/pqr.service'; // Asegúrate de tener este servicio creado
 import { CommonModule } from '@angular/common';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-pqr',
@@ -14,7 +15,7 @@ import { CommonModule } from '@angular/common';
 export class PqrComponent {
   pqrForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private pqrService: PqrService) {
+  constructor(private router: Router,private fb: FormBuilder, private pqrService: PqrService) {
     this.pqrForm = this.fb.group({
       fecha_incidencia: ['', Validators.required],
       identificacion: ['', Validators.required],
@@ -27,6 +28,7 @@ export class PqrComponent {
       observacion: ['', Validators.required],
       evidencias: ['']
     });
+    
   }
 
   onSubmit(): void {
@@ -34,11 +36,11 @@ export class PqrComponent {
       this.pqrService.createPqr(this.pqrForm.value).subscribe({
         next: (response) => {
           console.log('PQR creada:', response);
-          // Aquí puedes agregar lógica para mostrar un mensaje de éxito, redirigir, etc.
+          this.router.navigate(['/pqrs']);
         },
         error: (error) => {
           console.error('Error al crear PQR:', error);
-          // Aquí puedes manejar el error, mostrar un mensaje, etc.
+          this.router.navigate(['/pqrs']);
         }
       });
     } else {

@@ -1,7 +1,8 @@
-<nav>
+
+<nav *ngIf="isLoggedIn">
     <ul>
-      <li><a routerLink="/">Inicio</a></li>
-      <li><a [routerLink]="['/pqr']">agregar pqr</a></li>
+      <li><a routerLink="/">Ver PQRS</a></li>
+      <li><a [routerLink]="['/pqr']">Agregar PQR</a></li>
       <li *ngIf="isAdmin">
         <a [routerLink]="['/user-management']">Gestión de Usuarios</a>
       </li>
@@ -9,5 +10,12 @@
         <a [routerLink]="['/change-password']">Ajustes de usuario</a>
       </li>
       <li><button (click)="logout()">Logout</button></li>
+    </ul>
+  </nav>
+  
+  <nav *ngIf="!isLoggedIn">
+    <ul>
+      <li><a [routerLink]="['/login']">Login</a></li>
+      <li><a [routerLink]="['/register']">Registrarse</a></li>
     </ul>
   </nav>

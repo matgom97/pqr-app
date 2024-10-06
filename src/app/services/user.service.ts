@@ -1,4 +1,4 @@
-// src/app/services/user.service.ts
+
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -8,14 +8,14 @@ import { Observable } from 'rxjs';
 })
 export class UserService {
   private apiUrl = 'http://localhost:8000/api/users'; 
-  private apiUrl2 = 'http://localhost:8000/api'; // Ajusta esto según tu API
+  private apiUrl2 = 'http://localhost:8000/api'; 
 
   constructor(private http: HttpClient) {}
 
   getUsers(): Observable<any> {
-    const token = localStorage.getItem('token'); // Obtén el token del localStorage
+    const token = localStorage.getItem('token'); 
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-    return this.http.get<any[]>(this.apiUrl, { headers }); // Envía el token en el encabezado
+    return this.http.get<any[]>(this.apiUrl, { headers }); 
   }
 
   deleteUser(userId: number): Observable<any> {
@@ -25,18 +25,18 @@ export class UserService {
   }
 
   changePassword(currentPassword: string, newPassword: string, newPasswordConfirmation: string): Observable<any> {
-    const token = localStorage.getItem('token'); // Obtén el token de localStorage
+    const token = localStorage.getItem('token'); 
     const headers = {
-      'Authorization': `Bearer ${token}`, // Incluye el token en los encabezados
+      'Authorization': `Bearer ${token}`,
       'Content-Type': 'application/json'
     };
   
-    // Envía la solicitud con todos los parámetros necesarios
+
     return this.http.put(`${this.apiUrl2}/change-password`, 
       { 
         current_password: currentPassword, 
         new_password: newPassword, 
-        new_password_confirmation: newPasswordConfirmation // Asegúrate de incluir esto
+        new_password_confirmation: newPasswordConfirmation 
       },
       { headers }
     );
